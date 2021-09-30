@@ -5,17 +5,17 @@ class Heroes:
     def __init__(self, name):
         self.name = name
         self.token = '2619421814940190'
-        self.main_url = 'https://superheroapi.com/api/2619421814940190/'
+        self.main_url = 'https://superheroapi.com/api/'
 
     def _get_hero_id(self):
-        url = self.main_url + 'search/' + self.name.lower()
+        url = self.main_url + self.token + 'search/' + self.name.lower()
         res_dict = dict()
         res_dict = requests.get(url).json()
         hero_id = res_dict['results'][0]['id']
         return hero_id
 
     def _get_urls(self):
-        url = self.main_url + self._get_hero_id() + '/powerstats/'
+        url = self.main_url + self.token + self._get_hero_id() + '/powerstats/'
         return url
 
     def get_stats(self):
