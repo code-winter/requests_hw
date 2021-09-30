@@ -2,6 +2,7 @@ import requests
 from heroes import Heroes, max_stats
 from pprint import pprint
 from yandex import Yandex
+from stackoverflow import StackOverflow
 
 
 if __name__ == '__main__':
@@ -14,6 +15,10 @@ if __name__ == '__main__':
     # remote_path = '/API_test/my_file.txt'
     # local_filename = 'my_file.txt'
     # yan.upload_to_disk(remote_path, local_filename)
+    s_over = StackOverflow()
+    res = s_over.get_response()
+    pprint(res)
+
 
 
 
