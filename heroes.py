@@ -21,6 +21,7 @@ class Heroes:
         res_dict = dict()
         res_dict = requests.get(url).json()
         hero_id = res_dict['results'][0]['id']
+        print(f'Получен ID {self.name}')
         return hero_id
 
     def _get_urls(self):
@@ -37,6 +38,7 @@ class Heroes:
         response = requests.get(url=url, timeout=10)
         temp_dict = response.json()
         int_stat = temp_dict['intelligence']
+        print(f'Получены характеристики {self.name}')
         return (self.name, int_stat)
 
 
