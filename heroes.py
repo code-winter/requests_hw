@@ -8,7 +8,7 @@ class Heroes:
     """
     def __init__(self, name):
         self.name = name
-        self.token = '2619421814940190'
+        self.token = '2619421814940190/'
         self.main_url = 'https://superheroapi.com/api/'
 
     def _get_hero_id(self):
